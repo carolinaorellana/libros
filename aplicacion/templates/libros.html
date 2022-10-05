@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Books</title>
+</head>
+<body>
+    <main class="container my-4">
+        <div class="row justify-content-between">
+            <section class="col-4">
+                <h2>New Books</h2>
+                <form action="/crearlibro" method="post">
+                    <div class="mb-3">
+                        <label for="titulo">Title:</label>
+                        <input type="text" name="titulo" class="form-control">
+                        <label for="num_paginas">Number of pages:</label>
+                        <input type="number" name="num_paginas" id="num_paginas" class="form-control">
+                    </div>
+                    <input type="submit" value="Create Book" class="btn btn-info">
+                </form>
+                <div>
+                    <a href="/autores">Home</a>
+                </div>
+            </section>
+            <aside class="col-4">
+                <h2>All Books</h2>
+                <ul>
+                    {% for book in todos_libros%}
+                    <li><a href="">{{book.titulo}}</a></li>
+                    {% endfor %}
+                </ul>
+                {{todos_libros}}
+            </aside>
+        </div>  
+    </main>
+    
+    <!--Link Boostrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
+</body>
+</html>
